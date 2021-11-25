@@ -2,14 +2,17 @@ package com.example.navigationcomposercondatos
 
 sealed class Screen(val route: String) {
     object Home : Screen(route = "home_screen")
-    object Second : Screen("second_screen/{id}/{name}"){
- //       fun passId(id: Int): String {
-   //         return this.route.replace("$id",id.toString())
-     //   }
-        fun passId_Name(
-            id:Int,
-            name: String): String {
-            return "second_screen/$id/$name"
+    object Second : Screen("second_screen/{nombre}/{autor}/{año}/{descripcion}/{localizacion}/{imagen}"){
+
+        fun passMonu(
+            nombre:String,
+            autor: String,
+            año: Int,
+            descripcion: String,
+            localizacion: String,
+            imagen: String
+            ): String {
+            return "second_screen/$nombre/$autor/$año/$descripcion/$localizacion/$imagen"
         }
     }
 }
